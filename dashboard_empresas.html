@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard_empresas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo"><img src="imagenes/LogoV2.svg" alt="logo"></div>
+            <ul class="links">
+                <li><a href="#">
+                    <i class="fa-regular fa-circle-user"></i>
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="dashboard_navbar">
+        <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">En Espera</a></li>
+            <li><a href="#">Iniciados</a></li>
+            <li><a href="#">Terminados</a></li>
+        </ul>
+    </div>
+
+    <main>
+        
+        <div class="search">
+            <input type="text" name="search" placeholder="Buscar...">
+        </div>
+        <div class="filters">
+            <select name="filtros">
+                <option>Ordernar Por</option>
+                <option value="filtro1">Más antiguo a más reciente</option>
+                <option value="filtro2">Mayor duración a menor duración</option>
+            </select>
+        </div>
+        <div class="action_btn">
+            <a href="crear_proyecto.html">
+                <button class="new_project">Crear Proyecto</button>
+            </a>
+        </div>
+
+        <div class="projects">
+            <div class="project1"></div>
+        </div>
+    </main>
+
+</body>
+</html>

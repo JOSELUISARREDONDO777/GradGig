@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro empresas</title>
+    <link rel="stylesheet" href="signupempresas_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="/imagenes/LogoV2.svg" alt="logo"></a>
+    </header>
+
+    <main>
+        
+    <div class="btn_volver">
+        <a class="enlace_home" href="signup.html">
+            <div class="icon_flecha">
+                <i class="fa-solid fa-circle-arrow-left"></i>
+            </div>
+        <div class="volver">Volver</div></a>
+    </div>
+
+        <div class="formulario">
+            <form action="guardar_empresa.php" method="POST" onsubmit="redirigir(event)">
+                <label for="empresa_name">Nombre de la Empresa</label>
+                <input type="text" id="empresa_name" name="empresa_name" required>
+                
+                <label for="representante_name">Nombre del Representante</label>
+                <input type="text" id="representante_name" name="representante_name" required>
+             
+                <label for="correo_empresa">Correo Electrónico</label>
+                <input type="email" id="correo_empresa" name="correo_empresa" required>
+             
+                <label for="telefono_empresa">Teléfono de Contacto</label>
+                <input type="number" id="telefono_empresa" name="telefono_empresa" required>
+             
+                <button type="submit">Registrar Empresa</button>
+             </form>
+             
+        </div>
+    </main>
+
+    <script>
+        function redirigir(event) {
+            event.preventDefault(); // Evita el comportamiento predeterminado temporalmente.
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Si el registro fue exitoso, redirige
+                    window.location.href = 'dashboard_empresas.html';
+                } else {
+                    alert('Hubo un error en el registro.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('No se pudo completar el registro.');
+            });
+        }
+    </script>
+</body>
+</html>
+
